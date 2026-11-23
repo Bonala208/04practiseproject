@@ -1,0 +1,17 @@
+name: first workflow
+on:
+  workflow_dispatch
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Lint phase
+        run: npm run lint
+      - name: Test phase
+        run: npm test
+      - name: Building phase
+        run: npm run build
